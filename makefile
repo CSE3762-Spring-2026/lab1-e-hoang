@@ -7,10 +7,13 @@ CFLAGS =  -g -Wall
 # setup for system
 nLIBS =
 
-all: client1 
+all: server client1 
+
+server: server.c
+	$(CC) $(CFLAGS) -o server server.c
 
 client1: $(OBJCS)
 	$(CC) $(CFLAGS) -o $@ $(OBJCS) $(LIBS)
 
 clean:
-	rm client1 
+	rm client1
